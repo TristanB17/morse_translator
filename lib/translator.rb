@@ -63,8 +63,11 @@ class Translator
   def morse_to_eng(code)
     letters = code.split(" ")
     translated = letters.map do |letter|
-      binding.pry
-      letter = @english[letter]
+      if letter == ""
+        letter = " "
+      else
+        letter = @english[letter]
+      end 
     end
     translated.join
   end
