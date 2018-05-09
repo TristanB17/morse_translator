@@ -51,7 +51,7 @@ class Translator
   end
 
   def from_file(file)
-    message = File.open(file, "r")
+    message = File.read(file)
     eng_to_morse(message)
   end
 
