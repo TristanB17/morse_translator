@@ -39,4 +39,10 @@ class Translator
                     "0" => "-----",
                     " " => " "}
   end
+
+  def eng_to_morse(message)
+    message.
+  end
+
+
 end
