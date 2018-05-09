@@ -41,6 +41,7 @@ class Translator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+    @english = invert
   end
 
   def eng_to_morse(message)
@@ -55,5 +56,18 @@ class Translator
     eng_to_morse(message)
   end
 
+  def invert
+    @dictionary.invert
+  end
+
+  def morse_to_eng(code)
+    english = []
+    letters = code.split(/ /)
+    letters.each do |letter|
+      letter = @english[letter]
+      english << letter
+    end
+    english.join
+  end
 
 end
