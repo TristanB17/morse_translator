@@ -1,7 +1,9 @@
 require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/translator'
+require './lib/translator.rb'
+# require './lib/input.txt'
+require 'pry'
 
 class TranslatorTest < Minitest::Test
 
@@ -25,7 +27,13 @@ class TranslatorTest < Minitest::Test
     assert_equal expected, @translator.eng_to_morse("There are 3 ships")
   end
 
-  def 
+  def test_it_translates_from_file
+    expected = ".. .--- ..-. .- ..-....-..."
+    file = File.open("input.txt", "w")
+    file.write("I am in a file")
+    file.close
+    assert_equal expected, @translator.from_file(file)
+  end
 
 
 end

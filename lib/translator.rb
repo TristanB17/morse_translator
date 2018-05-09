@@ -1,3 +1,6 @@
+# require_relative 'input.txt'
+
+
 class Translator
 
   def initialize
@@ -45,6 +48,11 @@ class Translator
       letter = @dictionary[letter]
     end
     translated.join
+  end
+
+  def from_file(file)
+    message = File.open(file, "r")
+    eng_to_morse(message)
   end
 
 
