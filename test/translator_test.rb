@@ -16,7 +16,16 @@ class TranslatorTest < Minitest::Test
   def test_lower_case_letter_translation
     expected =  "......-...-..--- .-----.-..-..-.."
     assert_equal expected, @translator.eng_to_morse("hello world")
-  end 
+  end
+
+  def test_upper_case_letter_translation
+    expected = "......-...-..--- .-----.-..-..-.."
+    assert_equal expected, @translator.eng_to_morse("Hello World")
+    expected = "-......-.. .-.-.. ...-- ..........--...."
+    assert_equal expected, @translator.eng_to_morse("There are 3 ships")
+  end
+
+  def 
 
 
 end
